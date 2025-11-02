@@ -68,7 +68,7 @@ pub fn process_hash() {
             if song.original {
                 state.player.author.set_text_content(Some(&version.artist));
             } else {
-                state.player.author.set_text_content(Some(&format!("{} ({})", version.artist, l("%lang.coverBy|Kammy%"))));
+                state.player.author.set_text_content(Some(&format!("{} ({})", version.artist, l("%lang.coverBy|Miora%"))));
             }
 
             state.player.audio.set_attribute("data-kme-src", &format!("{}/{}", crate::CONTENT_CDN_ORIGIN, version.cdn_id)).unwrap();
