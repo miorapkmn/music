@@ -68,15 +68,14 @@
                             <div style="display: grid; grid-template-columns: max-content max-content; grid-gap: 10px;">
                                 <div style="display: flex; align-items: center;" class="text-muted">
                                     <div>
-                                        <div id="player-quality">AAC (256 kbps)</div>
-                                        <div data-i18n-content="%lang.cdm|MME%"></div>
+                                        <div id="player-quality">AAC</div>
+                                        <div>256 kbps</div>
                                     </div>
                                 </div>
-                                <img id="player-kme" src="https://cdn.leafia.eu/music/kme.webp" alt="Miora Media Encryption" style="width: 48px;">
                             </div>
                         </div>
                     </div>
-                    <audio id="player-el" data-kme-enable controls style="width: 100%;" controlslist="nodownload,nofullscreen,noremoteplayback" disableremoteplayback="yes"></audio>
+                    <audio id="player-el" controls style="width: 100%;" controlslist="nodownload,nofullscreen,noremoteplayback" disableremoteplayback="yes"></audio>
                 </div>
                 <div class="modal-footer">
                     <button id="player-modal-close" class="btn btn-secondary" data-i18n-content="%lang.close%"></button>
@@ -103,9 +102,11 @@
     <script src="https://cdn.leafia.eu/bootstrap/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.leafia.eu/monet/color.js" type="module"></script>
     <script src="https://cdn.leafia.eu/music/dash.all.min.js" referrerpolicy="no-referrer"></script>
-    <script src="/dist/kme.min.js"></script>
 
     <script type="module">
+        window.player = dashjs.MediaPlayer().create();
+        window.initialize_dash = (url) => window.player.initialize(window['player-el'], url, true);
+
         import * as wasm from "/dist/engine.js";
 
         (async () => {

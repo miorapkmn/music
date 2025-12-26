@@ -1,3 +1,4 @@
+use crate::utils::initialize_dash;
 use crate::utils::l;
 use crate::utils::hide_modal;
 use crate::utils::show_modal;
@@ -71,7 +72,7 @@ pub fn process_hash() {
                 state.player.author.set_text_content(Some(&format!("{} ({})", version.artist, l("%lang.coverBy|Miora%"))));
             }
 
-            state.player.audio.set_attribute("data-kme-src", &format!("{}/{}", crate::CONTENT_CDN_ORIGIN, version.cdn_id)).unwrap();
+            initialize_dash(&format!("{}/{}/stream_dash.mpd", crate::CONTENT_CDN_ORIGIN, version.cdn_id));
             let _ = state.player.audio.play().unwrap();
             hide_modal("version");
             show_modal("player");
