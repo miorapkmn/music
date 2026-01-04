@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>404: Page not found – Leafia.eu</title>
+    <link rel="stylesheet" href="https://cdn.leafia.eu/fonts/fonts.css">
+    <link rel="shortcut icon" href="https://cdn.leafia.eu/avatar/round.webp" type="image/webp">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    <meta name="darkreader-lock">
+    <style>
+        :root {
+            --md-sys-color-background: #ccc;
+            --md-sys-color-background-rgb: 204,204,204;
+            --md-sys-color-surface: #eee;
+            --md-sys-color-surface-rgb: 238,238,238;
+            --md-sys-color-primary: #222;
+            --md-sys-color-primary-rgb: 34,34,34;
+            --md-sys-color-secondary: #333;
+            --md-sys-color-secondary-rgb: 51,51,51;
+            --md-sys-color-on-surface: #111;
+            --md-sys-color-on-surface-rgb: 17,17,17;
+            --md-sys-color-outline-variant: #555;
+            --md-sys-color-outline-variant-rgb: 85,85,85;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --md-sys-color-background: #222;
+                --md-sys-color-background-rgb: 34,34,34;
+                --md-sys-color-surface: #111;
+                --md-sys-color-surface-rgb: 17,17,17;
+                --md-sys-color-primary: #ddd;
+                --md-sys-color-primary-rgb: 221,221,221;
+                --md-sys-color-secondary: #d7d7d7;
+                --md-sys-color-secondary-rgb: 215,215,215;
+                --md-sys-color-on-surface: #eee;
+                --md-sys-color-on-surface-rgb: 238,238,238;
+                --md-sys-color-outline-variant: #555;
+                --md-sys-color-outline-variant-rgb: 85,85,85;
+            }
+        }
+
+        body, html {
+            font-family: 'Atkinson Hyperlegible Next', Roboto, -apple-system, system-ui, sans-serif;
+            background-color: var(--md-sys-color-surface);
+            color: var(--md-sys-color-on-surface);
+            margin: 0;
+            height: 100%;
+        }
+
+        a {
+            color: var(--md-sys-color-primary);
+            cursor: pointer;
+        }
+
+        a:hover {
+            opacity: .75;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .banner {
+                filter: invert(1);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .bg {
+                filter: invert(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <script src="https://cdn.leafia.eu/monet/color.js" type="module"></script>
+    <div style="position: fixed; left: 0; right: 0; top: 0; z-index: 4; margin-left: auto; margin-right: auto; margin-top: max(10vh, 100px); max-width: 512px;">
+        <div style="background-color: var(--md-sys-color-background); border-radius: 10px; padding: 20px;">
+            <h1 style="color: var(--md-sys-color-secondary); margin: 0; text-align: center;">404</h1>
+            <h2 style="color: var(--md-sys-color-secondary); margin: 0 0 20px;text-align: center;">Page not found</h2>
+            <div>The page you are looking for could not be found on this website. It could have been moved or deleted. This is most likely a mistake on our side.</div>
+            <div style="margin-top: 20px; margin-bottom: 20px;">
+                <ul>
+                    <li><a href="/">Go back to the homepage</a></li>
+                    <li><a href="https://leafia.eu/">Go back to the main site</a></li>
+                    <li><a href="https://leafia.eu/#contact">Report an issue</a></li>
+                </ul>
+            </div>
+            <div style="color: var(--md-sys-color-outline-variant); margin-top: 20px; font-size: 14px; text-align: center;">This website is using the Leafia.eu infrastructure.</div>
+        </div>
+    </div>
+    <div class="bg" style="position: fixed; z-index: 1; left: 0; right: 0; top: 0; height: 50vh; background-image: url('https://cdn.leafia.eu/root/background.webp'); background-size: cover; background-position: center;"></div>
+    <div style="position: fixed; z-index: 2; left: 0; right: 0; top: 0; height: 50vh; background-image: linear-gradient(180deg, rgba(var(--md-sys-color-surface-rgb), 0) 0%, rgba(var(--md-sys-color-surface-rgb), 1) 75%);"></div>
+    <img src="https://cdn.leafia.eu/banner.svg" alt="Leafia.eu" class="banner" style="z-index: 3; opacity: .1; width: 128px; margin-left: auto; margin-right: auto; display: block; position: fixed; bottom: 50px; left: 0; right: 0;">
+</body>
+</html>
