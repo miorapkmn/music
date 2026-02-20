@@ -46,7 +46,7 @@
             <div class="list-group" id="js-data-results" style="display: none;"></div>
 
             <footer class="text-muted" style="margin-top: 30px; text-align: center;">
-                <p><credits-link></credits-link></p>
+                <p>Version <span id="version"></span></p>
                 <svg src="https://cdn.leafia.eu/banner.svg"></svg>
             </footer>
 
@@ -112,6 +112,13 @@
         import * as wasm from "/dist/engine.js";
 
         (async () => {
+            try {
+                if (document.getElementById("version")) document.getElementById("version").innerText = await (await fetch("/version")).text();
+            } catch (e) {
+                console.warn(e);
+                if (document.getElementById("version")) document.getElementById("version").innerText = "CANARY";
+            }
+
             window.showModal = (modal) => {
                 window.modals[modal].show();
             }
